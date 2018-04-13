@@ -72,6 +72,7 @@ const actions = {
   },
   async getNewPagesArticles({ commit, dispatch, state }) {
     try {
+      console.log('################################')
       const { article_id: articleId, sort_key: sortKey } = state.newArticlesLastEvaluatedKey
       const { Items: articles, LastEvaluatedKey } = await this.$axios.$get('/articles/recent', { params: { limit: 10, article_id: articleId, sort_key: sortKey } })
       commit(types.SET_NEW_ARTICLES_LAST_EVALUATED_KEY, { lastEvaluatedKey: LastEvaluatedKey })
@@ -82,9 +83,13 @@ const actions = {
           return { ...article, userInfo, alisToken }
         })
       )
+      console.log(articlesWithData)
       commit(types.SET_NEW_ARTICLES, { articles: articlesWithData })
     } catch (error) {
+      console.log(error)
       Promise.reject(error)
+    } finally {
+      console.log('################################')
     }
   },
   async getUserInfo({ commit }, { userId }) {

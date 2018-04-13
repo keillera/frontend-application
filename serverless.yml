@@ -47,6 +47,10 @@ functions:
       BASE_URL: ${env:BASE_URL}
       REGION: ${env:REGION}
       DOMAIN: ${env:DOMAIN}
+      IFRAMELY_API_KEY: ${env:IFRAMELY_API_KEY}
+      DIST_S3_BUCKET_NAME: ${env:DIST_S3_BUCKET_NAME}
+      CLIENT_ID: ${env:CLIENT_ID}
+      USER_POOL_ID: ${env:USER_POOL_ID}
     events:
       - http:
           path: '/'

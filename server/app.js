@@ -1,9 +1,14 @@
 const { Nuxt } = require('nuxt')
 const express = require('express')
 const config = require('./../nuxt.config.js')
+const cors = require('koa2-cors')
 config.dev = false
 
 const app = express()
+
+const corsOptions =  {
+  origin: `https://${process.env.DOMAIN}`,
+}
 
 const setHeaders = (req, res, next) => {
   res.removeHeader('x-powered-by')
@@ -16,6 +21,7 @@ const setHeaders = (req, res, next) => {
 }
 
 app.use(setHeaders)
+app.use(cors(corsOptions))
 const nuxt = new Nuxt(config)
 
 app.use((req, res, next) => {

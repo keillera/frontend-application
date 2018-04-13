@@ -5,7 +5,6 @@ config.dev = false
 
 const app = express()
 
-
 const setHeaders = (req, res, next) => {
   res.removeHeader('x-powered-by')
   res.header('no-cache', 'Set-Cookie')

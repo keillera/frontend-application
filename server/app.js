@@ -6,8 +6,8 @@ config.dev = false
 
 const app = express()
 
-const corsOptions =  {
-  origin: `https://${process.env.DOMAIN}`,
+const corsOptions = {
+  origin: `https://${process.env.DOMAIN}`
 }
 
 const setHeaders = (req, res, next) => {

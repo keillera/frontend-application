@@ -27,8 +27,7 @@ module.exports = {
   ],
   axios: {
     baseURL: process.env.BASE_URL,
-    proxyHeaders: false,
-    credentials: false
+    proxyHeaders: false
   },
   srcDir: 'app',
   router: {

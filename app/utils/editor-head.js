@@ -2,7 +2,7 @@ export default {
   script: [
     { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js' },
     {
-      src: 'https://cdnjs.cloudflare.com/ajax/libs/medium-editor/5.15.0/js/medium-editor.js'
+      src: 'https://cdnjs.cloudflare.com/ajax/libs/medium-editor/5.23.3/js/medium-editor.js'
     },
     {
       src: 'https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.min.js'
@@ -24,7 +24,7 @@ export default {
     },
     {
       src:
-        'https://cdnjs.cloudflare.com/ajax/libs/medium-editor-insert-plugin/2.4.1/js/medium-editor-insert-plugin.js'
+        'https://cdnjs.cloudflare.com/ajax/libs/medium-editor-insert-plugin/2.5.0/js/medium-editor-insert-plugin.js'
     },
     {
       src: '/part.js'
@@ -34,7 +34,7 @@ export default {
     {
       rel: 'stylesheet',
       href:
-        'https://cdnjs.cloudflare.com/ajax/libs/medium-editor-insert-plugin/2.4.1/css/medium-editor-insert-plugin.min.css'
+        'https://cdnjs.cloudflare.com/ajax/libs/medium-editor-insert-plugin/2.5.0/css/medium-editor-insert-plugin.min.css'
     },
     {
       rel: 'stylesheet',

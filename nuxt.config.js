@@ -3,12 +3,6 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    script: [
-      {
-        src: `//cdn.iframe.ly/embed.js?api_key=${process.env.IFRAMELY_API_KEY}&omit_script=1`,
-        async: true
-      }
-    ],
     title: 'ALIS | 信頼できる記事と人々を明らかにする全く新しいソーシャルメディア',
     titleTemplate: '%s | ALIS',
     meta: [

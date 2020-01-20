@@ -93,7 +93,7 @@ jobs:
             # persist_to_workspaceで落ちるため事前にディレクトリを生成している
             mkdir .nuxt
             if [ $ALIS_APP_ID ]; then
-              yarn build:ci
+              yarn build
             fi
 
       - persist_to_workspace:

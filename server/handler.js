@@ -18,7 +18,7 @@ const INVALID_PATH_REGEX = /[^\u0021-\u00ff]/
 module.exports.handler = (event, context, callback) => {
   console.log('[info]', 'Event', JSON.stringify(event))
   if (INVALID_PATH_REGEX.test(event.path)) {
-    console.log(`Invalid path: ${event.path}`)
+    console.log(`Invalid patha: ${event.path}`)
     const response = {
       statusCode: 400,
       headers: {},

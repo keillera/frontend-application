@@ -25,6 +25,7 @@ module.exports.handler = (event, context, callback) => {
       body: '',
       isBase64Encoded: false
     }
+    context.callbackWaitsForEmptyEventLoop = false
     callback(null, response)
   } else {
     awsServerlessExpress.proxy(server, event, context)

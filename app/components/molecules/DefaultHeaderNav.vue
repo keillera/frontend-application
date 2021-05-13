@@ -17,12 +17,6 @@
         "
         @click.native="resetData"
       >
-        <span
-          v-if="topic.name === 'fitness' || topic.name === 'learn-english'"
-          class="topic-display-pre-name"
-        >
-          BASHO
-        </span>
         <span class="topic-display-name">
           {{ topic.display_name }}
         </span>
@@ -175,10 +169,6 @@ $topicCount: 10;
         }
       }
 
-      .topic-display-pre-name {
-        display: none;
-      }
-
       .topic-display-name {
         bottom: 7px;
       }
@@ -206,6 +196,7 @@ $topicCount: 10;
     "topic0 topic1 topic2 topic3 topic4 topic5 topic6 topic7 topic8 topic9 topic10";
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
 
   &::-webkit-scrollbar {
     display: none;
@@ -239,13 +230,6 @@ $topicCount: 10;
     background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
   }
 
-  .topic-display-pre-name {
-    margin-top: 10px;
-    left: 0;
-    position: absolute;
-    right: 0;
-  }
-
   .topic-display-name {
     bottom: 6px;
     left: 0;
@@ -258,12 +242,8 @@ $topicCount: 10;
     box-shadow: 0 0 0 1px #fff, 0 0 0 3px #0086cc;
     display: block;
     height: 44px;
-    margin: 3px 2px 0 2px;
+    margin: 3px 3px 0;
     width: 85px;
-
-    .topic-display-pre-name {
-      margin-top: 8px;
-    }
 
     .topic-display-name {
       bottom: 5px;
@@ -271,6 +251,15 @@ $topicCount: 10;
 
     &:before {
       background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+    }
+
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 3px;
+      height: 1px;
+      content: '';
     }
 
     &.area-topic0 {

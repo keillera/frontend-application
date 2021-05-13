@@ -1,7 +1,28 @@
 <template>
   <div class="area-topo-notices-container">
-    <nuxt-link class="description" to="/ALIS-official/articles/KeOGzWqAzrwl">
-      BASHOについて <span class="tooltip" />
+    <nuxt-link class="link" to="/tag/DeFi">
+      DeFi特集
+    </nuxt-link>
+    <nuxt-link class="link" to="/tag/mkr">
+      MKR
+    </nuxt-link>
+    <nuxt-link class="link" to="/tag/synthetix">
+      SNX
+    </nuxt-link>
+    <nuxt-link class="link" to="/tag/Compound">
+      COMP
+    </nuxt-link>
+    <nuxt-link class="link" to="/tag/Balancer">
+      BAL
+    </nuxt-link>
+    <nuxt-link class="link" to="/tag/CRV">
+      CRV
+    </nuxt-link>
+    <nuxt-link class="link" to="/tag/uniswap">
+      Uniswap
+    </nuxt-link>
+    <nuxt-link class="link" to="/tag/Chainlink">
+      Chainlink
     </nuxt-link>
   </div>
 </template>

@@ -95,7 +95,8 @@ module.exports = {
     '~/plugins/vuelidate',
     { src: '~plugins/gtm.js', ssr: false },
     { src: '~/plugins/vue-tags-input', ssr: false },
-    { src: '~/plugins/editor', ssr: false }
+    { src: '~/plugins/editor', ssr: false },
+    { src: '~/plugins/lazysizes', ssr: false }
   ],
   axios: {
     baseURL: process.env.BASE_URL,
@@ -146,6 +147,19 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+    },
+
+    /**
+     * Edgeブラウザ対応のためeditorプラグインをトランスパイルする
+     */
+    transpile: ['editor'],
+
+    /**
+     * editorプラグインのトランスパイル時にエラーが出力されるため、明示的にcompactを有効化する
+     * [参考] https://stackoverflow.com/questions/35192796/babel-note-the-code-generator-has-deoptimised-the-styling-of-app-js-as-it-exc
+     */
+    babel: {
+      compact: true
     }
   },
   css: [

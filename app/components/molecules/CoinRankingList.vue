@@ -77,9 +77,10 @@ export default {
   computed: {
     ...mapGetters('article', ['cryptoRankingInfo'])
   },
-  async mounted() {
+  async fetch() {
     await this.getCryptoRankingInfo({ limit: this.indexCount })
   },
+  fetchOnServer: false,
   beforeDestroy() {
     this.resetCryptoRankingInfo()
   },

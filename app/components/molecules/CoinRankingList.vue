@@ -26,7 +26,12 @@
         </tr>
       </thead>
       <!--画面のちらつきを抑えるため、先に表示領域を確保-->
-      <tbody class="coin-ranking-body">
+      <tbody v-if="cryptoRankingInfo.length < 1" class="coin-ranking-body">
+        <tr v-for="index of indexCount" :key="index">
+          <td />
+        </tr>
+      </tbody>
+      <tbody v-else class="coin-ranking-body">
         <tr
           v-for="(cryptoInfo, index) in cryptoRankingInfo"
           :key="cryptoInfo.symbol"
@@ -72,10 +77,9 @@ export default {
   computed: {
     ...mapGetters('article', ['cryptoRankingInfo'])
   },
-  async fetch() {
+  async mounted() {
     await this.getCryptoRankingInfo({ limit: this.indexCount })
   },
-  fetchOnServer: false,
   beforeDestroy() {
     this.resetCryptoRankingInfo()
   },

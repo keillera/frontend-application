@@ -1,10 +1,6 @@
 <template>
   <div class="area-category-ranking-container">
-    <item-label
-      v-if="$route.query.topic === 'crypto'"
-      :labelName="rankingLabel"
-      :moreLink="moreLink"
-    />
+    <item-label :labelName="rankingLabel" :moreLink="moreLink" />
     <div class="coin-ranking">
       <coin-ranking-list :indexCount="3" />
     </div>

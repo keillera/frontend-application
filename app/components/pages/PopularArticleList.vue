@@ -6,7 +6,7 @@
     <app-header />
     <default-header-nav />
     <category-notices v-if="$route.query.topic === 'game'" />
-    <coin-ranking-top v-if="$route.query.topic === 'crypto'" />
+    <!--<coin-ranking-top v-if="$route.query.topic === 'crypto'" />-->
     <article-type-select-nav />
     <article-card-list :articles="popularArticles" />
     <the-loader :is-loading="!isLastPage" />

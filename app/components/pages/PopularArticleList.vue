@@ -5,8 +5,8 @@
   >
     <app-header />
     <default-header-nav />
-    <category-notices v-if="$route.query.topic === 'game'" />
-    <!--<coin-ranking-top v-if="$route.query.topic === 'crypto'" />-->
+    <category-notices v-show="$route.query.topic === 'game'" />
+    <coin-ranking-top v-show="$route.query.topic === 'crypto'" />
     <article-type-select-nav />
     <article-card-list :articles="popularArticles" />
     <the-loader :is-loading="!isLastPage" />
@@ -19,7 +19,7 @@ import { mapActions, mapGetters } from 'vuex'
 import AppHeader from '../organisms/AppHeader'
 import DefaultHeaderNav from '../molecules/DefaultHeaderNav'
 import CategoryNotices from '../organisms/CategoryNotices'
-// import CoinRankingTop from '../organisms/CoinRankingTop'
+import CoinRankingTop from '../organisms/CoinRankingTop'
 import ArticleTypeSelectNav from '../organisms/ArticleTypeSelectNav'
 import ArticleCardList from '../organisms/ArticleCardList'
 import TheLoader from '../atoms/TheLoader'
@@ -31,7 +31,7 @@ export default {
     AppHeader,
     DefaultHeaderNav,
     CategoryNotices,
-    // CoinRankingTop,
+    CoinRankingTop,
     ArticleTypeSelectNav,
     ArticleCardList,
     TheLoader,

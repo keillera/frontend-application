@@ -19,7 +19,7 @@ import { mapActions, mapGetters } from 'vuex'
 import AppHeader from '../organisms/AppHeader'
 import DefaultHeaderNav from '../molecules/DefaultHeaderNav'
 import CategoryNotices from '../organisms/CategoryNotices'
-import CoinRankingTop from '../organisms/CoinRankingTop'
+// import CoinRankingTop from '../organisms/CoinRankingTop'
 import ArticleTypeSelectNav from '../organisms/ArticleTypeSelectNav'
 import ArticleCardList from '../organisms/ArticleCardList'
 import TheLoader from '../atoms/TheLoader'
@@ -31,7 +31,7 @@ export default {
     AppHeader,
     DefaultHeaderNav,
     CategoryNotices,
-    CoinRankingTop,
+    // CoinRankingTop,
     ArticleTypeSelectNav,
     ArticleCardList,
     TheLoader,

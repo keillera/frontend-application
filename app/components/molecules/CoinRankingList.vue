@@ -32,7 +32,11 @@
         </tr>
       </tbody>
       <tbody v-else class="coin-ranking-body">
-        <tr v-for="(cryptoInfo, index) in cryptoRankingInfo" :key="cryptoInfo.symbol">
+        <tr
+          v-for="(cryptoInfo, index) in cryptoRankingInfo"
+          :key="cryptoInfo.symbol"
+          @click="toTag(`/tag/${cryptoInfo.symbol.toUpperCase()}`)"
+        >
           <td class="coin-index">
             {{ index + 1 }}
           </td>
@@ -41,9 +45,9 @@
             <span>{{ cryptoInfo.name }}</span>
           </td>
           <td class="coin-tag">
-            <nuxt-link :to="`/tag/${cryptoInfo.symbol.toUpperCase()}`" class="coin-tag-link">
+            <span class="coin-tag-link">
               {{ cryptoInfo.symbol.toUpperCase() }}
-            </nuxt-link>
+            </span>
           </td>
           <td class="puls-text">
             ¥{{ cryptoInfo.current_price | priceLocaleString }}
@@ -73,13 +77,16 @@ export default {
   computed: {
     ...mapGetters('article', ['cryptoRankingInfo'])
   },
-  async fetch() {
+  async mounted() {
     await this.getCryptoRankingInfo({ limit: this.indexCount })
   },
   beforeDestroy() {
     this.resetCryptoRankingInfo()
   },
   methods: {
+    toTag(tagLink) {
+      this.$router.push(tagLink)
+    },
     ...mapActions('article', ['getCryptoRankingInfo', 'resetCryptoRankingInfo'])
   },
   filters: {
@@ -132,6 +139,9 @@ export default {
 
 .coin-ranking-body tr {
   height: 30px;
+}
+.coin-ranking-body tr:hover {
+  cursor: pointer;
 }
 .coin-colindex {
   width: 10px;

@@ -26,12 +26,13 @@
         </tr>
       </thead>
       <!--画面のちらつきを抑えるため、先に表示領域を確保-->
-      <tbody v-if="cryptoRankingInfo.length < 1" class="coin-ranking-body">
-        <tr v-for="index of indexCount" :key="index">
-          <td />
-        </tr>
-      </tbody>
-      <tbody v-else class="coin-ranking-body">
+      <!--<tbody v-if="cryptoRankingInfo.length < 1" class="coin-ranking-body">-->
+        <!--<tr v-for="index of indexCount" :key="index">-->
+          <!--<td />-->
+        <!--</tr>-->
+      <!--</tbody>-->
+      <!--<tbody v-else class="coin-ranking-body">-->
+      <tbody class="coin-ranking-body">
         <tr
           v-for="(cryptoInfo, index) in cryptoRankingInfo"
           :key="cryptoInfo.symbol"
